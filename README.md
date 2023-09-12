@@ -9,7 +9,7 @@ Website dapat diakses melalui [link ini](https://inventorywebsite-pbp.adaptable.
 
 
 ## Penjelasan Cara Penyelesaian Tugas 2
-1. Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 2: <br>
+Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 2: <br>
    Setelah mempelajari [Tutorial 0](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-0) dan [Tutorial 1](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-1), saya menyelesaikan Tugas 2 dengan mempelajari dari banyak sumber.<br>
    Berikut adalah *step-by-step* yang saya buat dengan menyesuaikan *checklist* yang ada pada berkas soal:
    - [x] Mengaktifkan *virtual environtment* untuk mengisolasi package serta dependencies dari aplikasi sehingga tidak bertabrakan dengan versi lain yang ada pada komputer.
@@ -18,50 +18,62 @@ Website dapat diakses melalui [link ini](https://inventorywebsite-pbp.adaptable.
    - [x] Membuat atribut wajib seperti `name`,`amount` dan `description` sesuai dengan tipe *field* yang telah ditentukan.
    - [x] Mengatur routing URL agar aplikasi `main` dapat diakses melalui peramban web.
    - [x] Menjalankan server untuk mengecek apakah hasil website sudah sesuai dengan ketentuan.
-   - [x] Melakukan deploy ke [Adaptable](https://adaptable.io) untuk meng-*hosting* webiste.
+   - [x] Melakukan deploy ke [Adaptable](https://adaptable.io) untuk meng-*hosting* website.
    
- 
+## Bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya:
+![Bagan Django](https://github.com/syarna/Inventory_PBP/assets/112332315/0a3442b5-4152-4171-9dac-3d7ea3f3b9f7)<br>
 
-3. Bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya:
+Setiap request yang datang dari client (browser) akan dipetakan oleh URLS dan akan diteruskan ke View yang mana View akan memroses request tersebut. View akan memanggil Model untuk melakukan proses membaca atau menulis data ke Database. Setelah itu View akan memanggil template untuk merender data dalam format tertentu(html, xml, json) dan mengirimkan kembali hasilnya dalam bentuk HTTP Response ke client.
    
-4. Penjelasan pada bagan kaitan antara urls.py, views.py, models.py, dan berkas html:
-   
-5. Alasan untuk menggunakan ***vitual environment***:
+## Alasan untuk menggunakan ***vitual environment***:
+untuk menjaga ruang terpisah untuk sebuah proyek dengan pustaka dan dependensi di satu tempat. Environment ini spesifik ke proyek tertentu dan tidak berinterfer dengan dependensi proyek lainnya.
 
-6. Apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya?
+## Apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya?
+* **MVC** atau yang biasa disebut **Model-View-Controller** adalah suatu model yang seringkali digunakan oleh para pengembang software. Komponen-komponen di dalam arsiteuktur ini yaitu sebagai berikut.
+  * Model: Di dalam komponen ini berisi tentang logika bisnis dan status data yang ada di dalam aplikasi. Kompnen ini bertugas untuk mendapatkan dan memanipulasi data, berkomunikasi dengan controller, berinteraksi dengan database, terkadang memperbarui tampilan dari aplikasi yang dikembangkan.
+    Di dalam komponen ini berisi tentang logika bisnis dan status data yang ada di dalam aplikasi. Kompnen ini bertugas untuk mendapatkan dan memanipulasi data, berkomunikasi dengan controller, berinteraksi dengan database, terkadang memperbarui tampilan dari aplikasi yang dikembangkan.
 
+  * View: Komponen ini berhubungan dengan antarmuka pengguna yang terdiri dari HTML/CSS.XML. Komponen ini berkomunikasi dengan pengontrol dan terkadang berinteraksi dengan model. View berkerja sama dengan controller untuk menciptakan tampilan dinamis pada aplikasi yang dikembangkan. Selain bertugas untuk menangani antarmuka dan interaksi pengguna, komponen view juga memiliki tugas untuk menyajikan data yang sesuai untuk pengguna.
+    
+  * Controller: Controller adalah suatu aktivitas/fragmen yang berfungsi sebagai komunikator antara view dan model. Komponen ini membutuhkan suatu input pengguna dari layanan view/REST. Lalu Permintaan “Get Data” diproses dari model dan diteruskan ke view untuk ditampilkan ke pengguna.
 
-1. Tambahkan ***remote*** baru bernama **`upstream`** untuk mendapatkan code dari repository DDP2 dengan perintah:
-    ```bash
-    git remote add upstream https://gitlab.com/DDP2-CSUI/sp-ddp2-2023/tp3-sp-ddp2.git
-    ```
-    Jika sebelumnya anda telah menambahkan **`upstream`**, Anda dapat mengganti url **`upstream`** ke DDP2 dengan perintah:
-    ```bash
-    git remote set-url upstream https://gitlab.com/DDP2-CSUI/sp-ddp2-2023/tp3-sp-ddp2.git
-    ```
-    > Note: Sekarang, pada git anda terdapat 2 source remote, yakni: **`origin`**, repository milik anda dan **`upstream`**, repository DDP2 tempat soal dan template Tugas Pemrograman 3 berada.
-2. Buat direktori baru pada folder TP3 anda kemudian pindahkan terminal ke ***path*** tersebut.
-3. Lakukan ***pull*** dari remote **`upstream`** dengan perintah 
-    ```bash
-    git pull upstream main
-    ```
+  * Kelebihan **MVC**:<br>
+    + MVC membuat logika bisnis terpisah dalam Model.
+    + Mendukung teknik asynchronous.
+    + Jika terjadi suatu modifikasi, maka tidak akan mempengaruhi keseluruhan Model.
+    + Proses pengembangan aplikasi yang dilakukan dapat lebih cepat.
 
-## Deskripsi
-Tugas ini merupakan pembuatan sistem untuk apotek bernama HaloDDP menggunakan bahasa pemrograman Java. Sistem ini memungkinkan apoteker untuk melakukan input data obat, kalkulasi harga secara otomatis, dan update stok secara real-time. Sistem juga menyediakan fitur tambah obat, lihat obat, beli obat, dan riwayat transaksi.
+  * Kekurangan **MVC**: <br>
+    - Arsitektur ini dapat meningkatkan kompleksitas.
+    - Pengujian unit terhalang.
+    - Controller kode yang besar yang membuat pengembang tidak bisa mengelolahnya.
 
-Pembuatan Lemari: Apoteker dapat membuat lemari dengan ukuran tertentu. Lemari tersebut memiliki rak-rak yang ditentukan oleh apoteker.
+* **MVT** adalah singkatan dari **Model-View-Template** adalah sebuah konsep arsitektur yang digunakan dalam pengembangan web untuk memisahkan komponen-komponen utama dari sebuah aplikasi. Konsep ini memungkinkan pengembang web untuk mengorganisasi dan mengelola kode dengan lebih terstruktur.
+  * **Model**: komponen dalam konsep MVT yang bertanggung jawab untuk mengatur dan mengelola data dari aplikasi. Model mewakili struktur data dan logika aplikasi yang berada di belakang tampilan. Model menghubungkan aplikasi dengan basis data dan mengatur interaksi dengan data tersebut.
+    
+  * **View**: komponen yang menangani logika presentasi dalam konsep MVT. View mengontrol bagaimana data yang dikelola oleh model akan ditampilkan kepada pengguna. Dalam konteks MVT, view berperan sebagai pengatur tampilan dan mengambil data dari model untuk disajikan kepada pengguna.
 
-Pembuatan Rak: Setelah membuat lemari, apoteker dapat membuat rak-rak pada lemari sesuai dengan kategori obat yang diinginkan.
+  * **Template**: komponen yang berfungsi untuk mengatur tampilan atau antarmuka pengguna. Template memisahkan kode HTML dari logika aplikasi. Dalam MVT, template digunakan untuk merancang tampilan yang akhirnya akan diisi dengan data dari model melalui view.
 
-Tambah Obat: Apoteker dapat menambahkan obat baru ke dalam rak. Obat akan ditempatkan pada posisi yang diinginkan, dan stok obat juga ditentukan.
+  * Kelebihan **MVT**:
+    + Memisahkan tugas antara logika aplikasi, tampilan, dan data, sehingga memungkinkan pengembang untuk bekerja pada setiap komponen secara terpisah.
+    + Kode yang Mudah Dikelola
+    + Kode dapat digunakan kembali dalam berbagai bagian aplikasi yang berbeda.
+    + Struktur MVT mendukung skalabilitas dengan memungkinkan pengembangan paralel pada setiap komponen.
 
-Lihat Obat: Apoteker dapat melihat daftar obat yang telah diletakkan pada rak-rak lemari. Daftar obat akan mencantumkan nama obat dan stok obat.
+* **MVVM** atau *Model-View-ViewModel* yang merupakan gabungan dari MVC dan MVP. MVVM awalnya digunakan di dalam Windows Presentation Foundation (WPF) dan Silverlight, yang secara resmi diumumkan pada tahun 2005 oleh John Grossman dalam sebuah posting blog tentang Avalon. Pola yang digunakan berdasarkan gabungan dari MVC dan MVP mencoba untuk lebih jelas dalam memisahkan pengembangan UI dari logika bisnis dan perilaku dalam aplikasi.
 
-Beli Obat: Fitur ini digunakan apoteker untuk melakukan pembelian obat. Apoteker dapat memasukkan nama obat dan jumlah yang ingin dibeli. Jika stok obat mencukupi, maka transaksi berhasil dilakukan. 
+  * Model: digunakan untuk MVVM mirip dengan model yang digunakan MVC, dimana model tersebut terdiri dari data dasar yang digunakan untuk menjalankan perangkat lunak.
 
-Keluar: Fitur ini mengakhiri program dan mencetak riwayat transaksi hari ini. Jika tidak ada transaksi, akan dicetak pesan motivasi.
+  * View: digunakan sebagai antarmuka grafis antara pengguna dan pola desain, serta menampilkan output dari data yang telah diproses. View yang digunakan MVVM mirip dengan View yang digunakan dalam MVC.
 
-## Menyelesaikan konflik
+  * ViewModel: di satu sisi adalah abstraksi dari View, lalu di sisi yang lain, sebagai penyedia pembungkus data model untuk ditautkan. ViewModel terdiri dair Model yang diubah menjadi View, dan berisi perintah yang dapat digunakan oleh View untuk mempengaruhi Model.
 
-Jika terjadi *merge conflict*, silakan selesaikan konflik yang ada dan
-lanjutkan proses *merging*. Kamu bisa mencari [panduan](https://githowto.com/resolving_conflicts) atau meminta bantuan asdos jika mengalami kesulitan.
+  * Kelebihan **MVVP**:
+    + Tidak memiliki hubungan (ketergantungan) antara View dan ViewModel.
+    + Tidak ada antarmuka antara View dan Model.
+    + Pengujian unit yang mudah dan kode yang digerakkan oleh peristiwa (event-driven).
+      
+  * Kekurangan **MVVP**:
+    - Pengembang harus membuat suatu kuantitas yang dapat diukur di setiap komponen UI.
+    - Ukuran kode yang terlalu besar.
