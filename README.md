@@ -26,7 +26,7 @@ Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 2: <br>
 Setiap request yang datang dari client (browser) akan dipetakan oleh URLS dan akan diteruskan ke View yang mana View akan memroses request tersebut. View akan memanggil Model untuk melakukan proses membaca atau menulis data ke Database. Setelah itu View akan memanggil template untuk merender data dalam format tertentu(html, xml, json) dan mengirimkan kembali hasilnya dalam bentuk HTTP Response ke client.
    
 ## Alasan untuk menggunakan ***vitual environment***:
-untuk menjaga ruang terpisah untuk sebuah proyek dengan pustaka dan dependensi di satu tempat. Environment ini spesifik ke proyek tertentu dan tidak berinterfer dengan dependensi proyek lainnya.
+Untuk menjaga ruang terpisah untuk sebuah proyek dengan pustaka dan dependensi di satu tempat. Environment ini spesifik ke proyek tertentu dan tidak berinterfer dengan dependensi proyek lainnya.
 
 ## Apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya?
 * **MVC** atau yang biasa disebut **Model-View-Controller** adalah suatu model yang seringkali digunakan oleh para pengembang software. Komponen-komponen di dalam arsiteuktur ini yaitu sebagai berikut.
