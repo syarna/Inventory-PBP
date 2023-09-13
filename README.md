@@ -61,7 +61,7 @@ Untuk menjaga ruang terpisah untuk sebuah proyek dengan pustaka dan dependensi d
     + Kode dapat digunakan kembali dalam berbagai bagian aplikasi yang berbeda.
     + Struktur MVT mendukung skalabilitas dengan memungkinkan pengembangan paralel pada setiap komponen.
 
-* **MVVM** atau *Model-View-ViewModel* yang merupakan gabungan dari MVC dan MVP. MVVM awalnya digunakan di dalam Windows Presentation Foundation (WPF) dan Silverlight, yang secara resmi diumumkan pada tahun 2005 oleh John Grossman dalam sebuah posting blog tentang Avalon. Pola yang digunakan berdasarkan gabungan dari MVC dan MVP mencoba untuk lebih jelas dalam memisahkan pengembangan UI dari logika bisnis dan perilaku dalam aplikasi.
+* **MVVM** atau **Model-View-ViewModel** yang merupakan gabungan dari MVC dan MVP. MVVM awalnya digunakan di dalam Windows Presentation Foundation (WPF) dan Silverlight, yang secara resmi diumumkan pada tahun 2005 oleh John Grossman dalam sebuah posting blog tentang Avalon. Pola yang digunakan berdasarkan gabungan dari MVC dan MVP mencoba untuk lebih jelas dalam memisahkan pengembangan UI dari logika bisnis dan perilaku dalam aplikasi.
 
   * Model: digunakan untuk MVVM mirip dengan model yang digunakan MVC, dimana model tersebut terdiri dari data dasar yang digunakan untuk menjalankan perangkat lunak.
 
