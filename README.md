@@ -92,9 +92,9 @@ Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 3: <br>
 1. Metode Pengiriman Data: <br>
    - **GET**:<br>
      Ketika Anda menggunakan metode GET, data formulir disertakan dalam URL sebagai query string. Ini berarti bahwa data formulir akan terlihat langsung di URL dan dapat dengan mudah diakses oleh pengguna atau oleh siapa pun yang melihat URL tersebut. Metode ini cocok untuk permintaan yang bersifat idempoten (artinya, permintaan dapat diulang tanpa efek samping) dan ketika Anda ingin mengirimkan data ke server untuk pencarian atau pengambilan sederhana.<br> Contoh URL dengan metode GET:<br>
-```bash
-https://example.com/search/?q=query&category=books
-```
+   ```bash
+   https://example.com/search/?q=query&category=books
+   ```
    - **POST**:<br>
      Ketika Anda menggunakan metode POST, data formulir disertakan dalam badan permintaan HTTP, dan tidak terlihat langsung di URL. Oleh karena itu, data ini tidak mudah terlihat oleh pengguna atau siapa pun yang melihat URL. Metode ini lebih cocok untuk pengiriman data yang bersifat sensitif atau ketika Anda ingin mengirim data ke server untuk membuat, memperbarui, atau menghapus entitas di server.<br>
 
@@ -139,14 +139,14 @@ XML *(Extensible Markup Language)*, JSON *(JavaScript Object Notation)*, dan HTM
 
 4. Contoh Representasi:
    - **XML**:
-   ```bash
-    <person>
-     <name>John Doe</name>
-     <age>30</age>
-   </person>
-     ```
+      ```bash
+       <person>
+        <name>John Doe</name>
+        <age>30</age>
+      </person>
+      ```
    - **JSON**:
-     ```bash
+      ```bash
        {
         "person": {
          "name": "John Doe",
@@ -161,24 +161,32 @@ XML *(Extensible Markup Language)*, JSON *(JavaScript Object Notation)*, dan HTM
 
 ## Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
 1. Ringkas dan Mudah Dibaca: <br>
-   JSON memiliki sintaks yang sederhana dan mudah dipahami oleh manusia. Data dalam JSONdirepresentasikan dalam bentuk pasangan "kunci-nilai" (key-value), yang membuatnya lebih mudah dibaca dan ditulis dibandingkan dengan format lain yang lebih kompleks seperti XML. Ini memungkinkan pengembang untuk dengan cepat memahami struktur data yang dikirim dan diterima.
+   Memiliki sintaks yang sederhana dan mudah dipahami oleh manusia. Data dalam JSONdirepresentasikan dalam bentuk pasangan "kunci-nilai" (key-value), yang membuatnya lebih mudah dibaca dan ditulis dibandingkan dengan format lain yang lebih kompleks seperti XML. Ini memungkinkan pengembang untuk dengan cepat memahami struktur data yang dikirim dan diterima.
    
 2. Ringan:<br>
-   JSON adalah format data yang ringan dalam hal ukuran. Ini menghasilkan payload yang lebih kecil daripada format lain seperti XML, yang mengurangi penggunaan bandwidth dan meningkatkan kinerja transfer data, khususnya dalam lingkungan web dengan koneksi yang terbatas atau lambat. Dukungan untuk Struktur Bersarang: JSON mendukung struktur data bersarang, yang memungkinkan Anda untuk merepresentasikan data yang kompleks dengan cara yang terorganisir. Anda dapat memiliki objek JSON dalam objek JSON, dan ini sangat berguna dalam menggambarkan data yang lebih rumit.
+   Format data yang ringan dalam hal ukuran. Ini menghasilkan payload yang lebih kecil daripada format lain seperti XML, yang mengurangi penggunaan bandwidth dan meningkatkan kinerja transfer data, khususnya dalam lingkungan web dengan koneksi yang terbatas atau lambat.
+
+3. Dukungan untuk Struktur Bersarang:<br>
+   Memungkinkan untuk merepresentasikan data yang kompleks dengan cara yang terorganisir. 
    
-3. Dukungan untuk Tipe Data Umum:<br>
-   JSON mendukung tipe data umum seperti string, angka, boolean, array, dan objek. Ini memungkinkan Anda untuk merepresentasikan berbagai jenis data dengan mudah. Selain itu, JSON memiliki dukungan yang baik untuk nilai-nilai null.
+5. Dukungan untuk Tipe Data Umum:<br>
+   Tipe data umum seperti string, angka, boolean, array, dan objek. Ini memungkinkan untuk merepresentasikan berbagai jenis data dengan mudah. Selain itu, JSON memiliki dukungan yang baik untuk nilai-nilai null.
    
-4. Kemampuan untuk Diproses di Sisi Klien:<br>
+6. Kemampuan untuk Diproses di Sisi Klien:<br>
    JSON cocok dengan baik dengan bahasa pemrograman JavaScript, yang digunakan secara luas di sisi klien (browser web). Oleh karena itu, data JSON dapat dengan mudah diproses oleh JavaScript di dalam browser, membuatnya sangat sesuai untuk aplikasi web yang berinteraksi dengan server.
 
-5. Dukungan di Banyak Bahasa Pemrograman:<br>
+7. Dukungan di Banyak Bahasa Pemrograman:<br>
    Selain JavaScript, hampir semua bahasa pemrograman modern memiliki dukungan JSON yang baik. Ini membuatnya mudah untuk mengirim dan menerima data JSON di berbagai platform dan teknologi.
 
-6. Standar Industri:<br>
+8. Standar Industri:<br>
    JSON telah menjadi standar de facto dalam pertukaran data di lingkungan web. Banyak API web dan layanan daring menggunakan JSON sebagai format data standar, sehingga memudahkan integrasi dan interoperabilitas antara berbagai sistem.
    
-7. Sistem yang Mudah Dikelola:<br>
+9. Sistem yang Mudah Dikelola:<br>
    JSON adalah format data yang mudah dikelola, baik dalam hal pembuatan, pemrosesan, atau pemecahan masalah. Ini membuatnya cocok untuk pengembangan dan pemeliharaan aplikasi web. Karena kombinasi dari keunggulan-keunggulan ini, JSON telah menjadi pilihan yang populer dan dominan dalam pertukaran data antara aplikasi web modern, baik dalam konteks API web, pertukaran data antara server dan klien, maupun penyimpanan data di database NoSQL seperti MongoDB.
 
 ## Screenshoot Hasil Akses URL pada Postman:
+<img width="1440" alt="Screenshot 2023-09-20 at 10 28 19" src="https://github.com/syarna/Inventory_PBP/assets/112332315/e1bbb1f7-196b-4644-886d-2bbf91c789c2">
+<img width="1440" alt="Screenshot 2023-09-20 at 10 28 02" src="https://github.com/syarna/Inventory_PBP/assets/112332315/5b991b5a-8739-4963-8b22-9add1a726dff">
+<img width="1440" alt="Screenshot 2023-09-20 at 10 27 49" src="https://github.com/syarna/Inventory_PBP/assets/112332315/e33df3c8-b931-412a-821f-1b9ea40e9db7">
+<img width="1440" alt="Screenshot 2023-09-20 at 10 27 31" src="https://github.com/syarna/Inventory_PBP/assets/112332315/c8876bfc-2dd6-4166-90aa-923accf6ad20">
+<img width="1440" alt="Screenshot 2023-09-20 at 10 27 21" src="https://github.com/syarna/Inventory_PBP/assets/112332315/bb0067d7-8a6b-461d-86ff-a7faafd563f8">
