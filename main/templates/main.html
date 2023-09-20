@@ -1,12 +1,37 @@
-<h1>Tugas 2 - Inventory App PBP</h1>
-<h1>{{name}} - {{class}}</h1>
+{% extends 'base.html' %}
 
-<h5>Barang: </h5>
-<p>{{barang}}</p> 
-<h5>Amount: </h5>
-<p>{{amount}}</p> 
-<h5>Description: </h5>
-<p>{{description}}</p>
-<h5>Price: </h5>
-<p>{{price}}</p> 
- 
+{% block content %}
+    <h1>Things to Buy</h1>
+
+    <h5>Created by: </h5>
+    <p>{{name}} - {{class}}</p>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Date Added</th>
+        </tr>
+    
+        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+    
+        {% for product in products %}
+            <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.date_added}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+    <br />
+    
+    <a href="{% url 'main:create_product' %}">
+        <button>
+            Add New Product
+        </button>
+    </a>
+    
+    {% endblock content %}
