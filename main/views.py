@@ -9,10 +9,13 @@ from django.urls import reverse
 from main.models import Product
 from django.http import HttpResponse
 from django.core import serializers
+import datetime
 
 def logout_user(request):
     logout(request)
-    return redirect('main:login')
+    response = HttpResponseRedirect(reverse('main:login'))
+    response.delete_cookie('last_login')
+    return response
 
 def login_user(request):
     if request.method == 'POST':
@@ -21,7 +24,9 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('main:show_main')
+            response = HttpResponseRedirect(reverse("main:show_main")) 
+            response.set_cookie('last_login', str(datetime.datetime.now()))
+            return response
         else:
             messages.info(request, 'Sorry, incorrect username or password. Please try again.')
     context = {}
@@ -59,11 +64,12 @@ def show_xml(request):
 def show_main(request):
     products = Product.objects.all()
 
-    context = {      
-        'name': 'Syarna Savitri', # Nama kamu
-        'class': 'PBP B', # Kelas PBP kamu
-        'products': products
-    }
+    context = {
+    'name': request.user.username,
+    'class': 'PBP B',
+    'products': products,
+    'last_login': request.COOKIES['last_login'],
+}
 
     return render(request, "main.html", context)
 
