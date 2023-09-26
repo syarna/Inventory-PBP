@@ -5,4 +5,8 @@ class Product(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     date_added = models.DateField(auto_now_add=True)
-    
+
+class Employee(models.Model):
+    nameEmployee = models.CharField(max_length=255)
+    age = models.IntegerField()
+    hobby = models.TextField()    
