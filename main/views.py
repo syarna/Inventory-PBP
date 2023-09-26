@@ -1,15 +1,14 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
+import datetime
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
-from main.forms import ProductForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.http import HttpResponseRedirect, HttpResponse
+from django.core import serializers
 from django.urls import reverse
 from main.models import Product
-from django.http import HttpResponse
-from django.core import serializers
-import datetime
+from main.forms import ProductForm
 
 def logout_user(request):
     logout(request)
@@ -31,7 +30,7 @@ def login_user(request):
             messages.info(request, 'Sorry, incorrect username or password. Please try again.')
     context = {}
     return render(request, 'login.html', context)
-
+    
 def register(request):
     form = UserCreationForm()
 
@@ -60,16 +59,17 @@ def show_xml(request):
     data = Product.objects.all()
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
+# Create your views here.
 @login_required(login_url='/login')
 def show_main(request):
-    products = Product.objects.all()
+    products = Product.objects.filter(user=request.user)
 
     context = {
-    'name': request.user.username,
-    'class': 'PBP B',
-    'products': products,
-    'last_login': request.COOKIES['last_login'],
-}
+        'name': request.user.username, # Nama kamu
+        'class': 'PBP B', # Kelas PBP kamu
+        'products': products,
+        'last_login': request.COOKIES['last_login'],
+    }
 
     return render(request, "main.html", context)
 
@@ -77,7 +77,9 @@ def create_product(request):
     form = ProductForm(request.POST or None)
 
     if form.is_valid() and request.method == "POST":
-        form.save()
+        product = form.save(commit=False)
+        product.user = request.user
+        product.save()
         return HttpResponseRedirect(reverse('main:show_main'))
 
     context = {'form': form}
