@@ -7,14 +7,31 @@ Asdos : EDA <br>
 ## Hasil Website
 Website dapat diakses melalui [link ini](https://inventorywebsite-pbp.adaptable.app).
 
-# Tugas 4
+# Penjelasan Cara Penyelesaian Tugas 4
+Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 4: <br>
+   Setelah mempelajari [Tutorial 3](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-3), saya menyelesaikan Tugas 4 dengan mempelajari dari banyak sumber.<br>
+   Berikut adalah *step-by-step* yang saya buat dengan menyesuaikan *checklist* yang ada pada berkas soal:
 
 ##  Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+Django UserCreationForm adalah salah satu bentuk formulir bawaan yang disediakan oleh Django, sebuah framework web Python yang populer, untuk memudahkan proses pembuatan dan pendaftaran pengguna (user) di aplikasi web. Formulir ini secara khusus dirancang untuk membuat pengguna baru dengan informasi yang diperlukan, seperti nama pengguna (username), kata sandi (password), dan konfirmasi kata sandi. UserCreationForm biasanya digunakan bersama dengan Django's authentication system, yang mengelola otentikasi pengguna dan otomatisasi tugas-tugas terkait keamanan seperti penyimpanan kata sandi dalam bentuk terenkripsi.
+
+Kelebihannya yaitu mudah digunakan, validasi formulir secara otomatis, memiliki langkah-langkah keamanan yang kuat yang terkait dengan otentikasi pengguna, dan costumizeable.
+Kekurangannya yaitu keterbatasan desain, memerlukan lebih banyak fitur otentikasi kustom yang tidak dapat diakses melalui UserCreationForm, dan perawatan manual.
+
 
 ## Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+**Autentikasi** adalah proses untuk memverifikasi identitas pengguna. Ini digunakan untuk memastikan bahwa seseorang adalah pengguna yang dia klaim sebagai, biasanya dengan menggunakan kombinasi nama pengguna (username) dan kata sandi (password).Autentikasi digunakan untuk mengidentifikasi pengguna dan memastikan bahwa mereka memiliki hak akses ke sistem atau aplikasi.Django memiliki sistem autentikasi bawaan yang mengelola pendaftaran pengguna, masuk (login), dan keluar (logout) dari sistem. Ini memungkinkan pengguna untuk mengidentifikasi diri mereka sendiri dengan akun mereka.
+
+**Otorisasi** adalah proses untuk mengontrol akses pengguna terhadap sumber daya atau tindakan tertentu setelah mereka berhasil diautentikasi. Ini menentukan apa yang dapat dilakukan atau diakses oleh pengguna yang terautentikasi.Otorisasi digunakan untuk memutuskan hak akses pengguna terhadap fitur atau data aplikasi. Ini menjawab pertanyaan seperti "Apakah pengguna ini memiliki izin untuk melakukan tindakan tertentu?". Django memiliki sistem otorisasi yang memungkinkan Anda untuk menentukan izin (permissions) yang diberikan kepada pengguna, baik secara individu maupun melalui grup. Anda dapat mengontrol akses pengguna ke tampilan (views), objek model, atau bagian-bagian lain dari aplikasi Anda.
+
+Keduanya sangatlah penting karena Autentikasi membantu melindungi aplikasi dari akses tidak sah, sementara otorisasi memastikan bahwa pengguna hanya dapat mengakses sumber daya yang sesuai dengan peran atau izin mereka. Otorisasi memungkinkan pengembang untuk mengendalikan tingkat akses yang berbeda untuk pengguna yang berbeda. Ini penting ketika Anda memiliki pengguna dengan peran yang berbeda, seperti pengguna biasa dan administrator. Kombinasi autentikasi dan otorisasi membantu memastikan kepatuhan dengan aturan keamanan dan privasi yang berlaku, serta mencegah pengguna yang tidak sah mengakses atau memanipulasi data.
 
 ## Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
 Cookies adalah file teks kecil yang disimpan di komputer atau perangkat pengguna ketika mereka berinteraksi dengan situs web. Cookies digunakan oleh server web untuk menyimpan informasi di sisi klien, yang dapat digunakan kembali saat pengguna mengunjungi situs web tersebut nanti. Cookies digunakan untuk berbagai tujuan dalam aplikasi web, seperti mengidentifikasi pengguna yang telah masuk (login), menyimpan preferensi pengguna, melacak sesi pengguna, dan menganalisis perilaku pengguna.
+
+## Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+
+## 
 
 Cara Django Menggunakan Cookies:
 Django menyediakan pustaka Python yang memudahkan penggunaan cookies. Anda dapat menggunakan modul django.http.HttpResponse untuk menetapkan, mengambil, atau menghapus cookies.
