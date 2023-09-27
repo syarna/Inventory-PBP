@@ -11,6 +11,12 @@ Website dapat diakses melalui [link ini](https://inventorywebsite-pbp.adaptable.
 Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 4: <br>
    Setelah mempelajari [Tutorial 3](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-3), saya menyelesaikan Tugas 4 dengan mempelajari dari banyak sumber.<br>
    Berikut adalah *step-by-step* yang saya buat dengan menyesuaikan *checklist* yang ada pada berkas soal:
+      
+   - [x] Membuat fungsi dan form registrasi.
+   - [x] Membuat fungsi login dan logout.
+   - [x] Merestriksi akses halaman main.
+   - [x] Menggunakan data dari cookies
+   - [x] Menghubungkan model Product dengan User
 
 ##  Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
 Django UserCreationForm adalah salah satu bentuk formulir bawaan yang disediakan oleh Django, sebuah framework web Python yang populer, untuk memudahkan proses pembuatan dan pendaftaran pengguna (user) di aplikasi web. Formulir ini secara khusus dirancang untuk membuat pengguna baru dengan informasi yang diperlukan, seperti nama pengguna (username), kata sandi (password), dan konfirmasi kata sandi. UserCreationForm biasanya digunakan bersama dengan Django's authentication system, yang mengelola otentikasi pengguna dan otomatisasi tugas-tugas terkait keamanan seperti penyimpanan kata sandi dalam bentuk terenkripsi.
@@ -29,14 +35,10 @@ Keduanya sangatlah penting karena Autentikasi membantu melindungi aplikasi dari 
 ## Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
 Cookies adalah file teks kecil yang disimpan di komputer atau perangkat pengguna ketika mereka berinteraksi dengan situs web. Cookies digunakan oleh server web untuk menyimpan informasi di sisi klien, yang dapat digunakan kembali saat pengguna mengunjungi situs web tersebut nanti. Cookies digunakan untuk berbagai tujuan dalam aplikasi web, seperti mengidentifikasi pengguna yang telah masuk (login), menyimpan preferensi pengguna, melacak sesi pengguna, dan menganalisis perilaku pengguna.
 
+Cara Django menggunakan cookies yaitu Django menyediakan pustaka Python yang memudahkan penggunaan cookies. Anda dapat menggunakan modul django.http.HttpResponse untuk menetapkan, mengambil, atau menghapus cookies. Saat pengguna berhasil masuk, Anda dapat mengatur cookie sesi dengan menggunakan request.session dalam view Django. Misalnya, Anda dapat menggunakan request.session['nama_kunci'] = 'nilai' untuk menyimpan data sesi. Django juga secara otomatis menyediakan sistem untuk mengelola cookie autentikasi. Setelah pengguna masuk, cookie autentikasi akan digunakan untuk mempertahankan sesi login mereka.
+
 ## Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
-
-## 
-
-Cara Django Menggunakan Cookies:
-Django menyediakan pustaka Python yang memudahkan penggunaan cookies. Anda dapat menggunakan modul django.http.HttpResponse untuk menetapkan, mengambil, atau menghapus cookies.
-Saat pengguna berhasil masuk, Anda dapat mengatur cookie sesi dengan menggunakan request.session dalam view Django. Misalnya, Anda dapat menggunakan request.session['nama_kunci'] = 'nilai' untuk menyimpan data sesi.
-Django juga secara otomatis menyediakan sistem untuk mengelola cookie autentikasi. Setelah pengguna masuk, cookie autentikasi akan digunakan untuk mempertahankan sesi login mereka.
+Penggunaan cookies dalam pengembangan web dapat menjadi alat yang aman jika digunakan dengan benar, tetapi juga memiliki risiko potensial yang harus diwaspadai seperti resiko keamanan, privasi pengguna, kekuatan enkripsi, kelemahan browser dan management cookies yang buruk.
 
 # Penjelasan Cara Penyelesaian Tugas 3
 Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 3: <br>
