@@ -19,13 +19,13 @@ Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 5: <br>
 
 ## HTML5 Tag yang digunakan pada tugas 5.
 
-|    Nama Tag   |            Keterangan/Kegunaan              |
-| ------------- | --------------------------------------------|
-|<!DOCTYPE>     | Tag untuk menentukan tipe dokumen           |
-|<html>         | Tag untuk membuat sebuah dokumen HTML       |   
-|<title>        | Tag untuk membuat judul dari sebuah halaman |
-|<body>         | Tag untuk membuat tubuh dari sebuah halaman |
-|<h1> to <h6>   | Tag untuk membuat heading                   |
+|    Nama Tag   |            Keterangan/Kegunaan                 |
+| ------------- | -----------------------------------------------|
+| `<!DOCTYPE>`     | Tag untuk menentukan tipe dokumen           |
+| `<html>`         | Tag untuk membuat sebuah dokumen HTML       |   
+| `<title>`        | Tag untuk membuat judul dari sebuah halaman |
+| `<body>`         | Tag untuk membuat tubuh dari sebuah halaman |
+| `<h1> to <h6>`   | Tag untuk membuat heading                   |
 
 # Penjelasan Cara Penyelesaian Tugas 4
 Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 4: <br>
