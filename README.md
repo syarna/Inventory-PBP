@@ -17,15 +17,47 @@ Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 5: <br>
    - [x] Menambahkan fitur `Edit` pada website.
    - [x] Membuat fungsi untuk menghapus produk.
 
+## Manfaat dari setiap elemen selector dan kapan waktu yang tepat untuk menggunakannya
+Selector yang berfungsi untuk mengatur bagaimana pada sebuah halaman HTML untuk di berikan style atau diberikan rules untuk di design.
+
+1. Element Selector `(element)`:
+   Selector ini memilih semua elemen HTML dengan tag yang cocok.
+   Contoh: `p` akan memilih semua elemen `<p>` dalam dokumen HTML.
+   Waktu yang tepat: digunakan ketika ingin menerapkan gaya ke semua elemen dengan tag yang sama.
+   
+2. ID Selector `(#id)`:
+   Selector ini memilih elemen dengan atribut id tertentu.
+   Contoh: `#header` akan memilih elemen dengan `id="header"`.
+   Waktu yang tepat: digunakan ketika ingin menerapkan gaya ke elemen tertentu dengan ID unik.
+
+3. Class Selector `(.class)`:
+   Selector ini memilih elemen dengan atribut class tertentu.
+   Contoh: `.button` akan memilih semua elemen dengan `class="button"`.
+   Waktu yang tepat: digunakan ketika Anda ingin menerapkan gaya ke beberapa elemen dengan class yang sama.
+   
+4. Universal Selector `(*)`:
+   Selector ini memilih semua elemen dalam dokumen.
+   Contoh: `*` akan memilih semua elemen HTML dalam dokumen.
+   Waktu yang tepat: digunakan dengan hati-hati karena dapat mempengaruhi semua elemen dalam dokumen.
+
+5. Attribute Selector `([attribute])`:
+   Selector ini memilih elemen dengan atribut yang ditentukan, tanpa memperhatikan nilainya.
+   Contoh: `[target]` akan memilih semua elemen dengan atribut target, seperti `<a target="_blank">`.
+   Waktu yang tepat: digunakan ketika ingin menerapkan gaya kepada elemen dengan atribut tertentu, terlepas dari nilainya.
+
 ## HTML5 Tag yang digunakan pada tugas 5.
 
-|    Nama Tag   |            Keterangan/Kegunaan                 |
-| ------------- | -----------------------------------------------|
+|    Nama Tag      |              Keterangan/Kegunaan            |
+|------------------|---------------------------------------------|
 | `<!DOCTYPE>`     | Tag untuk menentukan tipe dokumen           |
 | `<html>`         | Tag untuk membuat sebuah dokumen HTML       |   
 | `<title>`        | Tag untuk membuat judul dari sebuah halaman |
 | `<body>`         | Tag untuk membuat tubuh dari sebuah halaman |
 | `<h1> to <h6>`   | Tag untuk membuat heading                   |
+| `<br>`	          | Memasukan satu baris putus                  |
+| `<!--...-->`	    | Tag untuk membuat komentar                  | 
+
+
 
 # Penjelasan Cara Penyelesaian Tugas 4
 Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 4: <br>
