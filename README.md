@@ -17,6 +17,16 @@ Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 5: <br>
    - [x] Menambahkan fitur `Edit` pada website.
    - [x] Membuat fungsi untuk menghapus produk.
 
+## HTML5 Tag yang digunakan pada tugas 5.
+
+|    Nama Tag   |            Keterangan/Kegunaan              |
+| ------------- | --------------------------------------------|
+|<!DOCTYPE>     | Tag untuk menentukan tipe dokumen           |
+|<html>         | Tag untuk membuat sebuah dokumen HTML       |   
+|<title>        | Tag untuk membuat judul dari sebuah halaman |
+|<body>         | Tag untuk membuat tubuh dari sebuah halaman |
+|<h1> to <h6>   | Tag untuk membuat heading                   |
+
 # Penjelasan Cara Penyelesaian Tugas 4
 Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 4: <br>
    Setelah mempelajari [Tutorial 3](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-3), saya menyelesaikan Tugas 4 dengan mempelajari dari banyak sumber.<br>
