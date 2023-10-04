@@ -7,6 +7,17 @@ Asdos : EDA <br>
 ## Hasil Website
 Website dapat diakses melalui [link ini](https://inventorywebsite-pbp.adaptable.app).
 
+# Penjelasan Cara Penyelesaian Tugas 5
+Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 5: <br>
+   Setelah mempelajari [Tutorial 4](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-4), saya menyelesaikan Tugas 4 dengan mempelajari dari banyak sumber.<br>
+   Berikut adalah *step-by-step* yang saya buat dengan menyesuaikan *checklist* yang ada pada berkas soal:
+      
+   - [x] Membuat fungsi dan form registrasi.
+   - [x] Membuat fungsi login dan logout.
+   - [x] Merestriksi akses halaman main.
+   - [x] Menggunakan data dari cookies
+   - [x] Menghubungkan model Product dengan User
+
 # Penjelasan Cara Penyelesaian Tugas 4
 Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 4: <br>
    Setelah mempelajari [Tutorial 3](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-3), saya menyelesaikan Tugas 4 dengan mempelajari dari banyak sumber.<br>
