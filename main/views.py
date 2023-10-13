@@ -4,11 +4,38 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
 from django.core import serializers
 from django.urls import reverse
 from main.models import Product
 from main.forms import ProductForm
+from django.views.decorators.csrf import csrf_exempt
+
+# Create your views here.
+@login_required(login_url='/login')
+def show_main(request):
+    products = Product.objects.filter(user=request.user)
+
+    context = {
+        'name': request.user.username, # Nama kamu
+        'class': 'PBP B', # Kelas PBP kamu
+        'products': products,
+        'last_login': request.COOKIES['last_login'],
+    }
+
+    return render(request, "main.html", context)
+
+def create_product(request):
+    form = ProductForm(request.POST or None)
+
+    if form.is_valid() and request.method == "POST":
+        product = form.save(commit=False)
+        product.user = request.user
+        product.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "create_product.html", context)
 
 def delete_product(request, id):
     # Get data berdasarkan ID
@@ -82,28 +109,21 @@ def show_xml(request):
     data = Product.objects.all()
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
-# Create your views here.
-@login_required(login_url='/login')
-def show_main(request):
-    products = Product.objects.filter(user=request.user)
+def get_product_json(request):
+    product_item = Product.objects.all()
+    return HttpResponse(serializers.serialize('json', product_item))
 
-    context = {
-        'name': request.user.username, # Nama kamu
-        'class': 'PBP B', # Kelas PBP kamu
-        'products': products,
-        'last_login': request.COOKIES['last_login'],
-    }
+@csrf_exempt
+def add_product_ajax(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+        user = request.user
 
-    return render(request, "main.html", context)
+        new_product = Product(name=name, price=price, description=description, user=user)
+        new_product.save()
 
-def create_product(request):
-    form = ProductForm(request.POST or None)
+        return HttpResponse(b"CREATED", status=201)
 
-    if form.is_valid() and request.method == "POST":
-        product = form.save(commit=False)
-        product.user = request.user
-        product.save()
-        return HttpResponseRedirect(reverse('main:show_main'))
-
-    context = {'form': form}
-    return render(request, "create_product.html", context)
+    return HttpResponseNotFound()

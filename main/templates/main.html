@@ -1,98 +1,162 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<style>
-    body {
-        font-family: 'Epilogue', sans-serif;
-    }
+    <style>
+        body {
+            font-family: 'Epilogue', sans-serif;
+        }
 
-    .navbar-brand {
-        font-family: 'Epilogue', sans-serif;
-    }
+        .navbar-brand {
+            font-family: 'Epilogue', sans-serif;
+        }
 
-    h5 {
-        font-family: 'Epilogue', sans-serif;
-    }
+        h5 {
+            font-family: 'Epilogue', sans-serif;
+        }
 
-    /* Custom CSS for product cards */
-    .product-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #f2f2f2;
-        padding: 10px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+        /* Custom CSS for product cards */
+        .product-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-    .product-details {
-        flex: 1;
-        margin-right: 10px;
-    }
+        .product-details {
+            flex: 1;
+            margin-right: 10px;
+        }
 
-    .product-actions {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-    }
+        .product-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
 
-    .product-actions button {
-        margin-top: 5px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 5px 10px;
-        cursor: pointer;
-    }
+        .product-actions button {
+            margin-top: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
 
-    .product-actions button:hover {
-        background-color: #0056b3;
-    }
-</style>
+        .product-actions button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Inventory PBP</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="{% url 'main:logout'%}">Logout</a>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Inventory PBP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="{% url 'main:logout'%}">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="col-form-label">Price:</label>
+                            <input type="number" class="form-control" id="price" name="price"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                </div>
             </div>
         </div>
     </div>
-</nav>
 
-<br>
-<h5>Hello, {{ name }} - {{ class }} </h5>
-<a href="{% url 'main:create_product' %}">
-    <button>Add New Product</button>
-</a>
+    <br>
+    <h5>Hello, {{ name }} - {{ class }} </h5>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
 
-<br>
-{% for product in products %}
-    <div class="product-container">
-        <div class="product-details">
-            <p><strong>Name:</strong> {{ product.name }}</p>
-            <p><strong>Price:</strong> {{ product.price }}</p>
-            <p><strong>Description:</strong> {{ product.description }}</p>
-            <p><strong>Date Added:</strong> {{ product.date_added }}</p>
+    <br>
+    {% for product in products %}
+        <div class="product-container">
+            <table id="product_table"></table>
+            <div class="product-actions">
+                <a href="{% url 'main:edit_product' product.pk %}">
+                    <button>Edit</button>
+                </a>
+                <a href="{% url 'main:delete_product' product.pk %}">
+                    <button>Delete</button>
+                </a>
+            </div>
         </div>
-        <div class="product-actions">
-            <a href="{% url 'main:edit_product' product.pk %}">
-                <button>Edit</button>
-            </a>
-            <a href="{% url 'main:delete_product' product.pk %}">
-                <button>Delete</button>
-            </a>
-        </div>
-    </div>
-{% endfor %}
-<br />
+    {% endfor %}
+    <br />
 
-<h5>Sesi terakhir login: {{ last_login }}</h5>
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
+
+    <script>
+    async function getProducts() {
+        return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+    }
+    async function refreshProducts() {
+        document.getElementById("product_table").innerHTML = ""
+        const products = await getProducts()
+        let htmlString = `<tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Date Added</th>
+        </tr>`
+        products.forEach((item) => {
+            htmlString += `\n<tr>
+            <td>${item.fields.name}</td>
+            <td>${item.fields.price}</td>
+            <td>${item.fields.description}</td>
+            <td>${item.fields.date_added}</td>
+        </tr>` 
+        })
+        
+        document.getElementById("product_table").innerHTML = htmlString
+    }
+
+
+    function addProduct() {
+        fetch("{% url 'main:add_product_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+
+        document.getElementById("form").reset()
+        return false
+    }
+    document.getElementById("button_add").onclick = addProduct
+    refreshProducts()
+    </script>
 
 {% endblock content %}
