@@ -12,10 +12,12 @@ Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 6: <br>
    Setelah mempelajari [Tutorial 5](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-5), saya menyelesaikan Tugas 5 dengan mempelajari dari banyak sumber.<br>
    Berikut adalah *step-by-step* yang saya buat dengan menyesuaikan *checklist* yang ada pada berkas soal:
       
-   - [x] Menambahkan bootstrap ke dalam website.
-   - [x] Menambahkan navbar pada website.
-   - [x] Menambahkan fitur `Edit` pada website.
-   - [x] Membuat fungsi untuk menghapus produk.
+   - [x] Membuat fungsi untuk mengembalikan data JSON
+   - [x] Membuat fungsi untuk menambahkan produk dengan AJAX
+   - [x] Menambahkan fungsi untuk routing `get_product_json` dan `get_product_ajax`
+   - [x] Menampilkan data produk dengan `Fetch()` API
+   - [x] Membuat modal sebagai Form untuk menambahkan produk
+   - [x] Menambahkan data produk dengan AJAX
 
 ## perbedaan antara asynchronous programming dengan synchronous programming.
 Pada proses synchronous setiap fungsi dijalankan berurutan, untuk dapat menjalankan fungsi berikutnya maka kita harus menunggu fungsi sebelumnya selesai (blocking). Berbeda dengan proses asynchronous dimana kita tidak perlu menunggu suatu fungsi selesai dijalankan untuk menjalankan fungsi lainnya (non-blocking).
