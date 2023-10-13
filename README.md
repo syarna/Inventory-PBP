@@ -17,6 +17,76 @@ Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 5: <br>
    - [x] Menambahkan fitur `Edit` pada website.
    - [x] Membuat fungsi untuk menghapus produk.
 
+## Manfaat dari setiap elemen selector dan kapan waktu yang tepat untuk menggunakannya
+Selector yang berfungsi untuk mengatur bagaimana pada sebuah halaman HTML untuk di berikan style atau diberikan rules untuk di design.
+
+1. Element Selector `(element)`: <br>
+   Selector ini memilih semua elemen HTML dengan tag yang cocok.
+   Contoh: `p` akan memilih semua elemen `<p>` dalam dokumen HTML.
+   Waktu yang tepat: digunakan ketika ingin menerapkan gaya ke semua elemen dengan tag yang sama.
+   
+2. ID Selector `(#id)`: <br>
+   Selector ini memilih elemen dengan atribut id tertentu. <br>
+   Contoh: `#header` akan memilih elemen dengan `id="header"`. <br>
+   Waktu yang tepat: digunakan ketika ingin menerapkan gaya ke elemen tertentu dengan ID unik. <br>
+
+3. Class Selector `(.class)`: <br>
+   Selector ini memilih elemen dengan atribut class tertentu. <br>
+   Contoh: `.button` akan memilih semua elemen dengan `class="button"`. <br>
+   Waktu yang tepat: digunakan ketika Anda ingin menerapkan gaya ke beberapa elemen dengan class yang sama. <br>
+   
+4. Universal Selector `(*)`: <br>
+   Selector ini memilih semua elemen dalam dokumen. <br>
+   Contoh: `*` akan memilih semua elemen HTML dalam dokumen. <br>
+   Waktu yang tepat: digunakan dengan hati-hati karena dapat mempengaruhi semua elemen dalam dokumen. <br>
+
+5. Attribute Selector `([attribute])`: <br>
+   Selector ini memilih elemen dengan atribut yang ditentukan, tanpa memperhatikan nilainya. <br>
+   Contoh: `[target]` akan memilih semua elemen dengan atribut target, seperti `<a target="_blank">`. <br>
+   Waktu yang tepat: digunakan ketika ingin menerapkan gaya kepada elemen dengan atribut tertentu, terlepas dari nilainya. <br>
+
+## HTML5 Tag yang digunakan pada tugas 5.
+
+|    Nama Tag      |              Keterangan/Kegunaan            |
+|------------------|---------------------------------------------|
+| `<!DOCTYPE>`     | Tag untuk menentukan tipe dokumen           |
+| `<html>`         | Tag untuk membuat sebuah dokumen HTML       |   
+| `<title>`        | Tag untuk membuat judul dari sebuah halaman |
+| `<body>`         | Tag untuk membuat tubuh dari sebuah halaman |
+| `<h1> to <h6>`   | Tag untuk membuat heading                   |
+| `<br>`	          | Memasukan satu baris putus                  |
+| `<!--...-->`	    | Tag untuk membuat komentar                  | 
+
+## Perbedaan antara margin dan padding
+Pada dasarnya, margin adalah ruang di sekitar elemen dan padding mengacu pada ruang antara elemen dan konten di dalamnya. <br>
+
+![image](https://github.com/syarna/Inventory_PBP/assets/112332315/17fc2c38-c645-440f-bd12-a1a22e1005e9)
+
+Bisa kita lihat pada gambar diatas, Margin berada di luar dua elemen yang berdekatan. Setiap sisi elemen memiliki ukuran margin yang dapat kamu ubah satu per satu. Dalam menciptakan celah, margin mendorong elemen yang berdekatan menjauh.<br>
+Di sisi lain, padding ditempatkan di dalam batas elemen. Untuk membuat celah tersebut, padding dapat memperbesar ukuran elemen atau memperkecil konten di dalamnya. Secara default, ukuran elemen meningkat.<br>
+Jadi, ada 2 buah kotak yang didalamnya terdapat teks, nah jika kamu ingin memberikan jarak antara teks dengan kotak nya, sehingga terdapat ruang didalam kotak, itulah Padding. Jika kamu ingin memberikan jarak antara kedua buah kotak tersebut, sehingga tidak berdempetan, itulah Margin.<br>
+Berikut Contoh nya :
+
+![image](https://github.com/syarna/Inventory_PBP/assets/112332315/63d244c6-0129-4f72-b2cd-296b7bc0f6bd)
+
+## Perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya
+
+- DESAIN
+  - Bootstrap menawarkan set class CSS dan komponen yang telah dirancang sebelumnya dengan tampilan yang cukup terstruktur dan konsisten. Ini cocok untuk proyek dengan desain tradisional yang membutuhkan kerangka kerja yang stabil dan mudah digunakan.
+  - Tailwind menganut pendekatan yang lebih "utility-first", di mana kita membangun antarmuka dengan menggabungkan class utilitas yang lebih kecil. Ini memberikan kebebasan kreatif yang lebih besar dan memungkinkan penggunaan class yang sangat spesifik.
+
+- FLEKSIBILITAS
+  - Bootstrap menawarkan kerangka kerja yang relatif terstruktur dengan banyak komponen yang telah dirancang sebelumnya. Ini memberikan stabilitas dan kemudahan penggunaan, tetapi mungkin memiliki batasan dalam hal fleksibilitas desain yang unik.
+  - Tailwind memberikan fleksibilitas yang lebih besar dengan pendekatan "utility-first" yang memungkinkan kita membangun desain yang sangat kustom sesuai kebutuhan. kita memiliki kendali penuh atas gaya dan tata letak dengan kombinasi class utilitas yang spesifik.
+
+- UKURAN FILE
+  - Bootstrap adalah kerangka kerja yang lebih besar dalam hal ukuran file karena menyediakan banyak fitur dan komponen yang siap pakai. Ini mungkin berdampak pada kecepatan pengunduhan dan performa halaman web.
+  - Tailwind dirancang untuk lebih ringan dalam hal ukuran file. Namun, ketika kita menggunakan banyak class utilitas dalam kode, ukuran file CSS dapat meningkat.
+
+- EKOSISTEM PENGEMBANGAN
+  - Bootstrap memiliki ekosistem yang sangat kuat dengan dokumentasi yang kaya, banyak tema dan template yang tersedia, serta dukungan komunitas yang luas. Ini membuatnya mudah untuk memulai dan mendapatkan sumber daya yang diperlukan.
+  - Tailwind juga memiliki ekosistem yang berkembang pesat dengan dokumentasi yang baik dan komunitas yang aktif, kita dapat menemukan banyak sumber daya, plugin, dan integrasi dengan kerangka kerja JavaScript seperti React atau Vue.
+
 # Penjelasan Cara Penyelesaian Tugas 4
 Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 4: <br>
    Setelah mempelajari [Tutorial 3](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-3), saya menyelesaikan Tugas 4 dengan mempelajari dari banyak sumber.<br>
