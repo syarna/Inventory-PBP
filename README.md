@@ -7,6 +7,27 @@ Asdos : EDA <br>
 ## Hasil Website
 Website dapat diakses melalui [link ini](https://inventorywebsite-pbp.adaptable.app).
 
+# Penjelasan Cara Penyelesaian Tugas 6
+Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 6: <br>
+   Setelah mempelajari [Tutorial 5](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-5), saya menyelesaikan Tugas 5 dengan mempelajari dari banyak sumber.<br>
+   Berikut adalah *step-by-step* yang saya buat dengan menyesuaikan *checklist* yang ada pada berkas soal:
+      
+   - [x] Menambahkan bootstrap ke dalam website.
+   - [x] Menambahkan navbar pada website.
+   - [x] Menambahkan fitur `Edit` pada website.
+   - [x] Membuat fungsi untuk menghapus produk.
+
+## perbedaan antara asynchronous programming dengan synchronous programming.
+Pada proses synchronous setiap fungsi dijalankan berurutan, untuk dapat menjalankan fungsi berikutnya maka kita harus menunggu fungsi sebelumnya selesai (blocking). Berbeda dengan proses asynchronous dimana kita tidak perlu menunggu suatu fungsi selesai dijalankan untuk menjalankan fungsi lainnya (non-blocking).
+Dari segi lama waktu eksekusi suatu program, proses asynchronous cenderung lebih cepat dibandingkan dengan proses synchronous. Dapat dilihat pada ilustrasi di bawah, proses synchronous membutuhkan waktu yg lebih lama dibandingkan proses asynchronous karena pada proses synchronous kita harus menunggu setiap fungsi selesai dijalankan.
+Meskipun proses asynchronous terlihat banyak memiliki kelebihan dibandingkan dengan proses synchronous, namun ada beberapa hal yang perlu diperhatikan sebelum menggunakan proses asynchronous.
+1. Keterkaitan antar fungsi
+Setiap fungsi pada proses asynchronous berjalan secara indepeden atau tidak saling mempengaruhi satu sama lain, jika hasil dari suatu fungsi akan digunakan pada fungsi berikutnya maka prosesnya harus berjalan secara berurutan. Oleh karena itu jika suatu fungsi saling berkaitan dengan fungsi lainnya, maka penggunaan proses asynchronous menjadi tidak tepat.
+2. Lama waktu eksekusi
+Berapa lamakah waktu yang dibutuhkan untuk menjalankan setiap fungsi?. Jika rata-rata waktu yang dibutuhkan untuk setiap fungsi relatif cepat dan tidak membutuhkan proses yang kompleks, penggunaan proses asynchronous tidak akan berdampak besar pada jalannya sebuah program.
+3. Kompleksitas
+Penerapan proses asynchronous pada suatu program cukuplah rumit, maka dari itu jika program yang akan dibuat masih tergolong simple dan tidak membutuhkan banyak proses, penggunaan asynchronous justru akan membuat program yang sederhana terlihat begitu kompleks
+
 # Penjelasan Cara Penyelesaian Tugas 5
 Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 5: <br>
    Setelah mempelajari [Tutorial 4](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-4), saya menyelesaikan Tugas 4 dengan mempelajari dari banyak sumber.<br>
