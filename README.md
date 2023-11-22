@@ -7,6 +7,66 @@ Asdos : EDA <br>
 ## Hasil Website
 Website dapat diakses melalui [link ini](https://inventorywebsite-pbp.adaptable.app).
 
+# Penjelasan Cara Penyelesaian Tugas 6
+Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 6: <br>
+   Setelah mempelajari [Tutorial 5](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-5), saya menyelesaikan Tugas 5 dengan mempelajari dari banyak sumber.<br>
+   Berikut adalah *step-by-step* yang saya buat dengan menyesuaikan *checklist* yang ada pada berkas soal:
+      
+   - [x] Membuat fungsi untuk mengembalikan data JSON
+   - [x] Membuat fungsi untuk menambahkan produk dengan AJAX
+   - [x] Menambahkan fungsi untuk routing `get_product_json` dan `get_product_ajax`
+   - [x] Menampilkan data produk dengan `Fetch()` API
+   - [x] Membuat modal sebagai Form untuk menambahkan produk
+   - [x] Menambahkan data produk dengan AJAX
+
+## perbedaan antara asynchronous programming dengan synchronous programming.
+Pada proses synchronous setiap fungsi dijalankan berurutan, untuk dapat menjalankan fungsi berikutnya maka kita harus menunggu fungsi sebelumnya selesai (blocking). Berbeda dengan proses asynchronous dimana kita tidak perlu menunggu suatu fungsi selesai dijalankan untuk menjalankan fungsi lainnya (non-blocking).
+Dari segi lama waktu eksekusi suatu program, proses asynchronous cenderung lebih cepat dibandingkan dengan proses synchronous. Dapat dilihat pada ilustrasi di bawah, proses synchronous membutuhkan waktu yg lebih lama dibandingkan proses asynchronous karena pada proses synchronous kita harus menunggu setiap fungsi selesai dijalankan.
+Meskipun proses asynchronous terlihat banyak memiliki kelebihan dibandingkan dengan proses synchronous, namun ada beberapa hal yang perlu diperhatikan sebelum menggunakan proses asynchronous.
+1. Keterkaitan antar fungsi
+Setiap fungsi pada proses asynchronous berjalan secara indepeden atau tidak saling mempengaruhi satu sama lain, jika hasil dari suatu fungsi akan digunakan pada fungsi berikutnya maka prosesnya harus berjalan secara berurutan. Oleh karena itu jika suatu fungsi saling berkaitan dengan fungsi lainnya, maka penggunaan proses asynchronous menjadi tidak tepat.
+2. Lama waktu eksekusi
+Berapa lamakah waktu yang dibutuhkan untuk menjalankan setiap fungsi?. Jika rata-rata waktu yang dibutuhkan untuk setiap fungsi relatif cepat dan tidak membutuhkan proses yang kompleks, penggunaan proses asynchronous tidak akan berdampak besar pada jalannya sebuah program.
+3. Kompleksitas
+Penerapan proses asynchronous pada suatu program cukuplah rumit, maka dari itu jika program yang akan dibuat masih tergolong simple dan tidak membutuhkan banyak proses, penggunaan asynchronous justru akan membuat program yang sederhana terlihat begitu kompleks
+
+## Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya
+Paradigma "event-driven programming" adalah suatu pendekatan dalam pemrograman di mana program merespons peristiwa atau "event" yang terjadi, seperti interaksi pengguna dengan antarmuka pengguna (UI) atau perubahan status dalam sistem. Dalam konteks JavaScript dan AJAX, paradigma ini sangat penting karena memungkinkan pengembang untuk membuat aplikasi yang responsif, interaktif, dan dinamis. Pada dasarnya, program yang ditulis dengan paradigma ini bekerja dengan cara mendengarkan peristiwa, menentukan tindakan yang akan diambil saat peristiwa tersebut terjadi, dan merespons peristiwa tersebut dengan menjalankan fungsi atau kode tertentu.
+
+Salah satu contoh penerapan paradigma event-driven programming dalam JavaScript adalah penanganan peristiwa (event handling) di antarmuka pengguna web. Misalnya, ketika seorang pengguna mengklik tombol pada halaman web, ini menciptakan peristiwa klik (click event). Pengembang dapat menentukan bagaimana halaman web harus merespons peristiwa ini dengan menambahkan "event listener" ke elemen tombol tersebut.
+
+```bash
+document.getElementById("button_add").onclick = addProduct;
+```
+
+## penerapan asynchronous programming pada AJAX
+Umumnya dalam dunia programing, kode yang kita tuliskan berjalan secara synchronous, begitu pula pada Javascript. Synchronous ini membuat kode yang kita tuliskan dijalankan secara berurutan. Hal ini sangat lemah ketika kita gunakan untuk melakukan sebuah pekerjaan yang berat, atau pekerjaan yang membutuhkan waktu yang belum dapat kita pastikan kapan pekerjaan itu selesai.
+
+Jika kita melakukan pekerjaan tersebut secara synchronous, proses runtime akan terblokade hingga pekerjaan tersebut selesai dijalankan. Yang paling menakutkan adalah pengguna akan terganggu dengan adanya blocking tersebut.
+
+Kode yang dituliskan secara asynchronous akan dieksekusi di belakang thread utama atau biasa disebut main thread. Hal tersebut tidak akan membloking proses runtime atau menunggu hingga proses selesai dilakukan. Sembari menunggu proses tersebut selesai, compiler akan mengeksekusi perintah kode selanjutnya.
+
+Pada Javascript, Asynchronous JavaScript and XMLHTTP atau biasa disebut AJAX merupakan salah satu konsep yang menerapkan metode asynchronous dalam menjalankan pekerjaannya. Biasa nya AJAX digunakan untuk melakukan permintaan data (request) dan menangani sebuah tanggapan (handling response), baik response dalam bentuk XML, Javascript ataupun JSON dari sebuah Rest API.
+
+## penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+Fetch API dan jQuery adalah dua teknologi yang digunakan untuk melakukan AJAX (Asynchronous JavaScript and XML) dalam pengembangan web. Masing-masing memiliki karakteristik dan kelebihan sendiri. Pendapat tentang teknologi mana yang lebih baik dapat bergantung pada kebutuhan proyek dan preferensi pengembang, tetapi di bawah ini saya akan membandingkan keduanya dari beberapa aspek:
+
+1. **Fetch API**:
+   - **Native JavaScript**: Fetch API adalah bagian dari JavaScript, yang berarti tidak memerlukan pustaka eksternal untuk digunakan. Ini adalah bagian dari standar ECMAScript yang modern.
+   - **Promise-based**: Fetch API menggunakan Promise untuk mengelola permintaan dan respons, sehingga memungkinkan penanganan peristiwa yang lebih baik dan lebih mudah dibaca.
+   - **Lebih Ringan**: Karena itu adalah bagian dari JavaScript inti, Fetch API biasanya lebih ringan daripada jQuery, yang merupakan pustaka yang lebih besar dan memiliki lebih banyak fitur.
+
+2. **jQuery**:
+   - **Cross-Browser Compatibility**: jQuery diciptakan untuk mengatasi masalah kompatibilitas lintas peramban (cross-browser compatibility), sehingga Anda tidak perlu khawatir tentang perbedaan implementasi peramban saat menggunakan jQuery.
+   - **Abstraction of Complexity**: jQuery menyediakan abstraksi yang kuat atas banyak operasi JavaScript yang umum digunakan. Hal ini membuat pengembangan lebih cepat dan lebih mudah, terutama jika Anda tidak terlalu familiar dengan JavaScript murni.
+   - **Plugin Ecosystem**: jQuery memiliki ekosistem plugin yang kaya, yang memungkinkan Anda dengan mudah menambahkan fitur tambahan ke situs web Anda.
+
+Pilihan antara Fetch API dan jQuery sangat tergantung pada konteks proyek dan preferensi pribadi. Beberapa pertimbangan yang mungkin membantu Anda memutuskan antara keduanya adalah:
+
+- **Kebutuhan Kompatibilitas**: Jika Anda perlu mendukung peramban lama dan beragam, jQuery mungkin lebih sesuai karena abstraksi kompatibilitas yang kuat.
+- **Kemahiran dan Pengalaman**: Jika Anda sudah terbiasa dengan JavaScript dan ingin menghindari dependensi tambahan, Fetch API mungkin menjadi pilihan yang baik.
+- **Kinerja dan Kekelompokan**: Jika Anda ingin menjaga situs Anda tetap ringan dan tidak perlu semua fitur jQuery, Fetch API dapat menjadi solusi yang lebih efisien.
+
 # Penjelasan Cara Penyelesaian Tugas 5
 Cara pengimplementasian *checklist* untuk menyelesaikan Tugas 5: <br>
    Setelah mempelajari [Tutorial 4](https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-4), saya menyelesaikan Tugas 4 dengan mempelajari dari banyak sumber.<br>
